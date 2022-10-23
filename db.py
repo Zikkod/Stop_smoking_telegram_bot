@@ -154,20 +154,20 @@ def resetlastsmokedate(connection, user_id):
 
 def getuserdict(connection):
     userdict = {}
-    for i in range(-12, 12):
+    for i in range(-11, 13):
         userdict[i] = []
 
     select_userdata = f"SELECT user_id from nosmokers WHERE utc = -12"
     users = execute_read_query_all(connection, select_userdata)
     if users != None:
         for id in users:
-            userdict[-12].append(id)
+            userdict[12].append(id)
 
     select_userdata = f"SELECT user_id from nosmokers WHERE utc = 12"
     users = execute_read_query_all(connection, select_userdata)
     if users != None:
         for id in users:
-            userdict[-12].append(id)
+            userdict[12].append(id)
 
     for utc in range(-11,12):
         select_userdata = f"SELECT user_id from nosmokers WHERE utc = {utc}"

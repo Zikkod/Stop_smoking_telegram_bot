@@ -175,7 +175,7 @@ def setlastsmokedate(message, userdata):
 
 def notification(bot, connection1):
     while True:
-        utclst = [s for s in range(-12, 12)]
+        utclst = [s for s in range(-11, 13)]
         while utclst:
             try:
                 userdict = getuserdict(connection1)
